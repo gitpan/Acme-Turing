@@ -3,7 +3,7 @@
 
 ################## We start with some black magic to print on failure.
 
-BEGIN { $| = 1; print "1..2\n"; }
+BEGIN { $| = 1; print "1..4\n"; }
 END {print "not ok 1\n" unless $loaded;}
 use Acme::Turing;
 $loaded = 1;
@@ -15,7 +15,7 @@ my $failed = 0;
 
 #--- The first example given in Turing's paper. Prints the sequence
 #--- 010101....
-$m1 = Acme::Turing->new();
+$m1 = Acme::Turing->new(steps=>100);
 $m1->add_spec('START:ANY', "P0,R:C");
 $m1->add_spec('C:ANY', "R:E");
 $m1->add_spec('E:ANY', "P1, R:Z");

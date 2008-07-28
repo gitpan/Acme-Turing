@@ -9,7 +9,7 @@ require Exporter;
 @ISA = qw(Exporter);
 @EXPORT = qw();
 @EXPORT_OK = qw();
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
@@ -212,7 +212,7 @@ at least one character; empty strings are not allowed.
 Also, blanks may not be written except by "erasing" (see below).
 
 new() returns a hash reference.  The specification for the machine
-(C<$machine->{spec}>) is empty.
+(C<$machine-E<gt>{spec}>) is empty.
 You must then populate the specification
 for your machine, as described next.
 
@@ -272,7 +272,7 @@ after that.
 After the machine has been specified, this method will execute
 one instruction (one state transition) on the machine.
 It returns the resulting state of the machine, which is also stored
-in C<$machine->{cur_state}>.
+in C<$machine-E<gt>{cur_state}>.
 
 =item B<run> L R
 
@@ -312,11 +312,12 @@ Well, uh, this module isn't really useful for much of anything.
 
 Alan M. Turing, "On Computable Numbers, with an Application to the
 Entscheidungsproblem", I<Proceedings of the London Mathematical
-Society>, 2nd series, vol. 42 (1936-37), pp. 230-265.
+Society>, 2nd series, 42 (1936-37), 230-265.
 
-This paper is also reprinted in his I<Collected Works>; I believe it
-is in the volume I<Mathematical Logic>, ed. R. O. Gandy and
-C. E. M. Yates (Amsterdam: North-Holland, 2001).
+This paper is also reprinted in his I<Collected Works>,
+specifically in I<Mathematical Logic>,
+ed. R. O. Gandy and C. E. M. Yates
+(Amsterdam: Elsevier Science, 2001).
 At this writing, it is also available at
 http://www.abelard.org/turpap2/tp2-ie.asp.
 
@@ -333,6 +334,6 @@ rather than by arbitrary character strings.
 
 =head1 AUTHOR
 
-Geoffrey Rommel (grommel@sears.com), January 2003.
+Geoffrey Rommel (GROMMEL@cpan.org), January 2003.
 
 =cut
